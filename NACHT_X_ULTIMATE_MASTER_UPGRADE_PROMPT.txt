@@ -1,0 +1,599 @@
+NACHT X — ULTIMATE MASTER UPGRADE PROMPT
+OWNER APPLICATION + MAIN APP REDESIGN
+Platform: Android
+Project owner: Founder
+Important: Work on the EXISTING project and deliver the actual updated project, not just example code.
+
+============================================================
+0. HOW TO USE THIS PROMPT
+============================================================
+
+I will provide my existing Nacht X project/source files and the screenshots and screen recordings showing the visual references. I will also send a new logo image. Inspect all provided materials before implementing the changes.
+
+If you have repository-editing and build tools, work directly in the existing repository. If I provide a GitHub repository, inspect its actual files and workflows. If you only have uploaded source files, work from those files.
+
+Do not merely explain how I can build the app. Do not respond with only a plan, snippets, or instructions to manually recreate hundreds of files. Implement the complete upgrade using the tools and files actually available to you, build and test as much as possible, and deliver the updated project.
+
+Do not claim that a feature was implemented, built, or tested unless you actually did it. If a requirement needs a missing backend, unavailable device permission, or physical-device testing, identify that honestly and implement the strongest legitimate part possible.
+
+============================================================
+1. THE FINAL PRODUCT MUST CONTAIN ONLY TWO APPS
+============================================================
+
+I previously had four apps:
+1. Nacht X
+2. Nacht X Generator
+3. Nacht X Owner
+4. Nacht X Information
+
+I now want ONLY TWO separate applications:
+
+A. NACHT X — the main user-facing gaming companion.
+B. NACHT X OWNER — my private owner/admin application.
+
+Merge the useful Generator and Information features into the main Nacht X application. Do not require users to install the old Generator or Information apps. Integrate the relevant key/access management user interface, help, FAQs, setup instructions, documentation, troubleshooting, and other useful existing functionality into Nacht X.
+
+Keep Nacht X Owner as a separate application. Do not merely rename the old apps: actually integrate the relevant functionality and remove unnecessary dependencies on the old standalone apps.
+
+The final build workflow must build and publish both APK artifacts:
+- Nacht-X-APK
+- Nacht-X-Owner-APK
+
+Never silently skip the Owner APK or upload a nonexistent file.
+
+============================================================
+2. INSPECT THE EXISTING PROJECT FIRST
+============================================================
+
+Before changing files, inspect the entire project and identify:
+- Existing activities/fragments or Compose screens
+- XML layouts and resources
+- Manifest and permissions
+- Gradle configuration and dependencies
+- Application IDs and package names
+- Authentication and key management
+- Shizuku/ADB integration
+- Overlay/floating-window code
+- Game launcher and installed-app discovery
+- Generator and Information app functionality
+- Owner app code
+- Backend/API integration
+- GitHub Actions workflows
+- Existing build errors and useful working features
+
+Preserve working features, signing/build configuration, and project identity where possible. Do not replace the project with an unrelated template or delete functioning code just to simplify the implementation.
+
+============================================================
+3. MAIN VISUAL DIRECTION — USE THE NEW LOGO I SEND
+============================================================
+
+I will send a new logo image for Nacht X. Treat that image as the primary visual design reference.
+
+IMPORTANT:
+- Analyze the logo's dominant colors, accent colors, contrast, shapes, mood, and typography.
+- Make the main Nacht X app's background, cards, borders, buttons, icons, navigation, loading states, and animations match the logo's color palette.
+- Make the Nacht X Owner app use a coordinated version of the same visual identity, clearly recognizable as the Owner app.
+- Do not assume the final colors before seeing the logo.
+- Do not retain the old black-and-white theme if it conflicts with the new logo.
+- Do not choose unrelated colors that clash with the logo.
+- Keep text readable and maintain accessible contrast.
+- Use the logo artwork only in appropriate app branding locations and produce properly sized launcher icons/adaptive icons for Android.
+- Keep the UI original; use the supplied images as inspiration rather than copying unrelated app layouts exactly.
+
+Design quality requirements:
+- Premium, modern, polished, mobile-first interface.
+- Beautiful full-screen/background treatment without gaps or incorrectly sized images.
+- Thoughtful typography, spacing, shadows, card surfaces, borders, and iconography.
+- Smooth but restrained animations.
+- High-quality buttons with consistent pressed, disabled, loading, success, and error states.
+- Responsive layouts for different phone sizes and supported orientations.
+- Proper system-bar, status-bar, navigation-bar, keyboard, and display-cutout handling.
+- Reduced-motion option and performance-conscious effects.
+- No excessive glow, clutter, tiny touch targets, or unreadable text.
+
+Every visible control must perform its advertised action or clearly explain why it is unavailable. Do not create fake buttons or switches that only change appearance.
+
+============================================================
+4. NACHT X OWNER: OWNER-ONLY BRANDING AND APP CUSTOMIZATION
+============================================================
+
+A major requirement: I must be able to manage the Nacht X app's branding from the separate Nacht X Owner app.
+
+Create a dedicated, polished “App Branding & Appearance” section in Nacht X Owner.
+
+Where technically possible, let an authorized Owner manage:
+- Main app display name
+- App logo and launcher-icon artwork
+- Splash/loading screen artwork
+- Main app background artwork
+- Main theme/accent colors derived from the logo
+- Button and card accent colors
+- Background appearance
+- Optional background effects
+- Welcome/title text
+- App announcements or maintenance message
+- Branding/version information displayed inside the app
+
+The Owner interface must support selecting an image from the Android photo picker or document picker, previewing it, cropping/resizing where appropriate, confirming the change, and publishing the new branding.
+
+Provide:
+- Image preview
+- Current branding preview
+- Save/apply button
+- Cancel/reset option
+- Validation for image size and file type
+- Upload progress when a server is used
+- Clear success/error results
+- A history of branding changes where practical
+- A confirmation before publishing a change that affects all users
+
+IMPORTANT ANDROID LIMITATION:
+An installed Android app generally cannot silently replace its own launcher icon or manifest-defined application label just by changing a preference. Do not falsely promise that changing a server setting automatically changes the real Android launcher label/icon on every installed device.
+
+Implement this properly:
+1. Allow remotely managed branding inside the main app (logo, in-app title, splash artwork, background, colors, and supported UI assets) using a secure configuration/update mechanism.
+2. If changing the actual Android launcher label or icon requires a new APK build, explain this in the Owner UI and documentation.
+3. If practical, create build variants or generated Android resources so I can publish a new Nacht X APK with a changed launcher name/icon after updating the branding.
+4. Do not silently install APKs or bypass Android's installation confirmation.
+5. Do not claim a launcher icon or app name has changed on existing installations unless the implementation truly supports it.
+6. Keep the default branding usable if the network or remote configuration is unavailable.
+7. Validate remote branding assets and never execute uploaded images or files as code.
+
+I will provide the new logo separately. Build the system so the logo can be changed later from Nacht X Owner without redesigning the entire project.
+
+============================================================
+5. SECRET OWNER ACCESS — NACHT X OWNER ONLY
+============================================================
+
+The Owner access identifier supplied by me is:
+
+NCTX-OWNER-7171717171717171902
+
+This identifier is intended ONLY for access to the separate Nacht X Owner application. It must NEVER be accepted as a normal Nacht X user key, game key, Generator key, or ordinary account credential.
+
+Do not place this identifier in the main Nacht X app, normal-user key validation, publicly visible UI, public documentation, or normal-user-facing error messages.
+
+Do not reuse ordinary user-generated keys to unlock Nacht X Owner.
+
+SECURITY REQUIREMENTS:
+- Treat this identifier as sensitive.
+- Do not assume that hiding a secret in an APK makes it secure.
+- Do not use this identifier as the sole security mechanism for sensitive online administration.
+- If online Owner authentication exists or can be configured, validate Owner authorization on the server and protect administrative APIs server-side.
+- Store credentials/tokens using appropriate secure storage and never log secrets.
+- Apply rate limiting and clear lockout/abuse protection where the backend supports it.
+- Return generic authentication errors that do not reveal whether a secret was correct.
+- Require a secure authenticated Owner session for administrative operations.
+- Revoke sessions when the Owner account is disabled or credentials are rotated, where supported.
+- Do not provide Owner access to ordinary users through a client-side role flag or a locally editable preference.
+- If no backend currently exists, explain the security limitation and implement the authentication interface and integration points without pretending server-side security is already operational.
+
+The Owner app must have a separate login/access screen and separate authorization path. A normal Nacht X login must not unlock the Owner app.
+
+============================================================
+6. NACHT X MAIN DASHBOARD
+============================================================
+
+Create a premium dashboard with:
+- Nacht X branding and profile/account status
+- Quick-launch section
+- Favorite and recently launched apps
+- Game library
+- Floating-panel shortcut
+- Gaming tools
+- Device information available through supported Android APIs
+- Permission/compatibility status
+- Announcements
+- Help, FAQ, and Information Center
+- Settings
+- Version/update information
+
+Allow customization of dashboard cards where practical. Keep it responsive and fast on mid-range Android phones.
+
+Do not display fabricated FPS, temperature, network latency, ROOT, or Shizuku status. Show measured values only when they can actually be obtained and clearly label estimates or unavailable information.
+
+============================================================
+7. FLOATING APP / MINI-PANEL SYSTEM — HIGH PRIORITY
+============================================================
+
+Study the supplied screenshots and screen recordings. One reference shows Messenger in a small movable window above another app. I want an original Nacht X floating-panel experience.
+
+Implement a movable Nacht X overlay/panel that can appear over a supported game when the user explicitly enables it and grants the required Android permission.
+
+Include:
+- Floating action button or launcher shortcut
+- Drag handle
+- Close and minimize controls
+- Expand/collapse
+- Resizing where supported
+- Adjustable transparency where supported
+- Remembered position where practical
+- Edge snapping where practical
+- Smooth open/close animations
+- Portrait/landscape handling
+- Correct overlay-service lifecycle
+- Safe behavior when the game closes, permissions are revoked, or the process is recreated
+- Duplicate-overlay prevention
+- Battery-conscious behavior
+
+The panel should include:
+- Favorite app shortcuts
+- Recently used apps
+- Search installed launchable apps
+- Game tools
+- Quick settings shortcuts supported by Android
+- Main dashboard shortcut
+- Hide/close controls
+
+Android does not allow every third-party app to turn every other app into a resizable independent mini-window on every device. Implement a genuine overlay for Nacht X and quick-launch actions for other apps. Do not pretend other apps are embedded inside Nacht X if they are actually launched separately.
+
+Use supported Android APIs and request SYSTEM_ALERT_WINDOW permission through the official settings flow when required. Never silently bypass Android security or launch arbitrary apps without user interaction.
+
+============================================================
+8. INSTALLED APPLICATION PICKER
+============================================================
+
+Dynamically discover installed, launchable apps using Android's package visibility rules and proper manifest declarations.
+
+Support apps such as:
+- Mobile Legends: Bang Bang
+- Call of Duty: Mobile
+- Honor of Kings
+- Roblox
+- Messaging apps
+- Music apps
+- Browsers
+- Other launchable apps installed by the user
+
+Do not hardcode only these examples.
+
+Include:
+- App icon and display name
+- Search
+- Sorting
+- Favorites
+- Recently launched
+- Add/remove quick-launch shortcut
+- Game-library selection
+- Clear errors if an app cannot be launched
+- Useful empty and permission-denied states
+
+Do not collect or transmit the installed-app list unnecessarily. Follow current Android and Google Play package-visibility/privacy requirements.
+
+============================================================
+9. GAME LIBRARY AND PROFILES
+============================================================
+
+Create game profiles with:
+- Game icon/name
+- Favorite status
+- Last-launched information
+- Custom profile label
+- User-defined quick actions
+- Floating-panel preference
+- Supported device compatibility information
+
+Launch games through their normal Android launch intents. Explain launch failures clearly.
+
+Do not promise that Nacht X automatically increases FPS or overrides game restrictions. Do not inject into games, alter their memory, bypass anti-cheat, manipulate competitive gameplay, or interfere with game integrity checks.
+
+============================================================
+10. GAME TOOLS AND DEVICE UTILITIES
+============================================================
+
+Implement useful, legitimate tools where supported:
+- Quick launcher
+- Floating panel
+- Brightness settings shortcut
+- Volume controls/shortcut
+- Do Not Disturb settings shortcut
+- Network settings shortcut
+- Storage information
+- Battery information
+- Supported refresh-rate information
+- Supported display settings
+- Available device/performance information
+- App notification settings shortcut
+- Game profile manager
+- Permission manager shortcuts
+- Troubleshooting and diagnostics
+
+Respect Android restrictions. If an operation requires user confirmation, Shizuku, ADB, root, a newer Android version, or device-specific support, explain that accurately.
+
+Preserve existing useful Shizuku/ADB support. Do not require Shizuku for features that do not need it. Never display fake ROOT/READY status or claim a shell command succeeded without checking the result. Use an explicit allowlist of supported operations rather than arbitrary shell execution.
+
+============================================================
+11. MERGE NACHT X GENERATOR FUNCTIONALITY
+============================================================
+
+Integrate useful Generator features into Nacht X. Do not build a separate Generator APK.
+
+Where appropriate, include:
+- User-facing access-key entry
+- Key/account status
+- Expiration information
+- Activation status
+- Clear invalid-key errors
+- Account help and troubleshooting
+- Any legitimate existing generator features
+
+Inspect the existing implementation and preserve working behavior. If key generation currently happens only on the client, do not claim it is secure against modification. Sensitive key generation and validation should be handled by a backend where required.
+
+Do not embed private administrative credentials or permanent signing secrets in the APK.
+
+============================================================
+12. MERGE NACHT X INFORMATION FUNCTIONALITY
+============================================================
+
+Add an Information Center inside Nacht X with:
+- About
+- Version and changelog
+- FAQ
+- Setup instructions
+- Floating-panel tutorial
+- Supported features
+- Android compatibility
+- Shizuku troubleshooting
+- Permission explanations
+- Privacy policy
+- Terms
+- Contact/support using only real configured links
+- Report-a-problem interface
+
+Make the Information Center accessible from the main navigation and settings.
+
+============================================================
+13. LOGIN AND USER ACCESS
+============================================================
+
+Build a polished login/access experience appropriate to the existing project:
+- Account/key entry
+- Loading state
+- Useful error messages
+- Session handling and expiration
+- Logout
+- Secure token storage
+- Password reset if supported by the backend
+- No plaintext password storage
+- No hardcoded public-facing secret credentials
+
+Inspect the existing backend and integrate with it when available. If no backend exists, create clean API integration points and explain what server setup remains. Do not claim that online authentication is working without a real backend.
+
+Keep legitimate offline features available without unnecessary authentication when appropriate.
+
+============================================================
+14. NACHT X OWNER ADMIN DASHBOARD
+============================================================
+
+Nacht X Owner is a separate, private administrative app with its own secure authentication and authorization.
+
+Build a premium Owner dashboard with:
+- Overview
+- User/account management
+- Access-key management
+- Account status and expiration
+- Key revocation
+- Account suspension/restoration where justified
+- User search
+- Access-duration management
+- System announcements
+- App Branding & Appearance
+- Backend health
+- App version/update information
+- Support requests
+- Security events and audit logs
+- Administrative configuration
+
+All sensitive operations must be authorized by the server. Hiding buttons in the UI is not security.
+
+Require confirmations for destructive operations. Record sensitive Owner actions in an audit trail. Do not create fake controls that claim to modify real users when no backend exists.
+
+============================================================
+15. AUTHENTICATION AND SECURITY
+============================================================
+
+Implement:
+- Secure authentication
+- Server-side role verification
+- Least-privilege permissions
+- Secure network communication
+- Input validation
+- Appropriate token storage
+- Session expiration/revocation where supported
+- Audit logs
+- Generic authentication failures
+- Protection against unauthorized admin API requests
+- No embedded backend secrets
+- No unnecessary personal-data collection
+
+Do not collect messages, passwords, or private content from other apps. Do not secretly monitor users, bypass app sandboxing, or weaken other applications' security.
+
+============================================================
+16. SETTINGS AND PERSONALIZATION
+============================================================
+
+Include:
+- Theme and appearance
+- Logo/background effects where supported
+- Animation intensity and reduced-motion option
+- Floating-panel behavior and transparency
+- Quick-launch customization
+- Game-library preferences
+- Notifications
+- Haptic feedback
+- Languages if implemented
+- Privacy
+- Permissions
+- Shizuku settings
+- Account
+- About
+- Diagnostics
+- Reset preferences
+
+Persist settings correctly. A setting must actually affect behavior, not just animate its switch.
+
+============================================================
+17. PERFORMANCE AND COMPATIBILITY
+============================================================
+
+Optimize for mobile and mid-range Android devices:
+- Fast startup
+- Smooth scrolling
+- Efficient rendering
+- Low background CPU usage
+- Sensible memory management
+- Correct activity/service lifecycle
+- No unnecessary permanent services
+- No duplicate overlays
+- Process recreation handling
+- Responsive layouts
+- Correct keyboard/system-bar behavior
+- No clipped text or hidden buttons
+- Compatible behavior for supported Android versions
+
+Detect unavailable features gracefully. Respect reduced-motion settings and avoid battery-draining background effects.
+
+============================================================
+18. CODE QUALITY AND PROJECT ARCHITECTURE
+============================================================
+
+Use the existing architecture where reasonable. Keep responsibilities separated for:
+- UI
+- Application logic
+- Models
+- Repositories
+- Local storage
+- Network/API
+- Authentication/authorization
+- Floating-window services
+- Device compatibility
+- Branding configuration
+
+Avoid unnecessary rewrites, duplicate logic, unused dependencies, fake implementations, and unrelated sample code.
+
+============================================================
+19. GITHUB ACTIONS AND APK BUILDS
+============================================================
+
+Inspect and fix the existing GitHub Actions workflow.
+
+It must:
+1. Check out the repository.
+2. Set up the required JDK/Android environment.
+3. Use the Gradle wrapper correctly.
+4. Build Nacht X.
+5. Build Nacht X Owner.
+6. Preserve useful build logs.
+7. Upload both APKs as separate artifacts.
+8. Fail correctly when a build fails.
+9. Never silently skip the Owner APK.
+10. Never upload a nonexistent APK.
+
+Artifact names:
+- Nacht-X-APK
+- Nacht-X-Owner-APK
+
+Keep signing credentials out of the public repository. Explain the repository secrets needed for release signing. Produce debug APKs for testing when release signing is not configured.
+
+============================================================
+20. TESTING
+============================================================
+
+Run the available build and tests. Check:
+- Gradle build and Kotlin compilation
+- Manifest/resources/dependencies
+- Authentication and navigation
+- Installed-app discovery
+- Game launching
+- Overlay lifecycle and permission-denied behavior
+- Shizuku connection/error handling
+- Settings persistence
+- Branding preview/save/publish
+- Owner authorization and API protection
+- Backend error handling
+- Both APK outputs
+- GitHub Actions artifact paths
+
+Fix discovered errors before delivery. If a physical Android device or backend is unavailable, explicitly list which tests still require it. Never claim a test passed unless it was actually run.
+
+============================================================
+21. NON-NEGOTIABLE IMPLEMENTATION RULES
+============================================================
+
+1. Work on the existing project.
+2. Inspect before editing.
+3. Merge Generator and Information into Nacht X.
+4. Keep only Nacht X and Nacht X Owner as the final apps.
+5. The floating panel is a high priority.
+6. Discover installed apps dynamically.
+7. Use the new logo I provide as the visual design source.
+8. Let authorized Owner users manage supported in-app branding.
+9. Be honest about launcher-label/icon changes that require a new APK.
+10. Keep the supplied Owner secret exclusive to Owner authentication.
+11. Secure sensitive Owner operations server-side.
+12. Build both APKs and upload both artifacts.
+13. Do not silently remove working functionality.
+14. Do not leave fake buttons or fake status indicators.
+15. Do not stop after producing a plan or prototype.
+16. Do not require me to manually reconstruct hundreds of files from chat.
+17. Do not claim missing backends, permissions, or device features are working.
+18. If something is blocked, implement the strongest legitimate alternative and document the limitation.
+19. Work through your internal tasks without waiting for me to approve every phase.
+20. Deliver the actual updated project using the tools available to you.
+
+============================================================
+22. REQUIRED FINAL DELIVERABLES
+============================================================
+
+Deliver:
+1. Updated Nacht X source project.
+2. Updated Nacht X Owner source project.
+3. Integrated Generator functionality.
+4. Integrated Information Center.
+5. Floating-panel implementation.
+6. Dynamic installed-app picker and game library.
+7. Updated user access/key management.
+8. Owner admin dashboard.
+9. Owner-only App Branding & Appearance section.
+10. Branding configuration for logo, in-app name, colors, backgrounds, splash artwork, and supported assets.
+11. Honest implementation for launcher icon/name updates that require rebuilding the APK.
+12. Required backend/API changes if a backend exists.
+13. Updated manifest/permissions/Gradle files.
+14. Updated GitHub Actions workflow.
+15. Both APK artifacts when the available build environment supports them.
+16. Implemented-feature summary.
+17. Required server setup and device permission list.
+18. Build/install instructions.
+19. Honest test results and unresolved limitations.
+
+FINAL VISION:
+
+NACHT X is my all-in-one Android gaming companion:
+a premium, logo-matched interface, game launcher,
+movable floating Nacht X panel, useful device tools,
+integrated access management, and Information Center.
+
+NACHT X OWNER is my separate, protected Owner app.
+From it, I can manage authorized users and keys and
+control supported Nacht X branding settings, including
+the in-app logo, title, backgrounds, and color theme.
+When an actual Android launcher label/icon change
+requires a new APK, make that build workflow practical
+and explain the requirement honestly.
+
+Use the new logo I provide as the central design
+reference for colors and overall UI styling.
+
+Now inspect the existing project, implement the
+complete upgrade, build and test what is possible,
+and deliver the actual updated project.
+
+
+Make all the system working no bug, problem also add Announcement to Nacht X Owner everything you can add to Nacht X Owner please add it
+
+don't hit your limit i want you to finish it right now convert the Nacht X Information and Nacht X Generator to Nacht X which is the main app so the Nacht X and Nacht X Owner will left
+
+i have also free version less fetures access which is the user can get and to get premium version of my app more features access
+
+Free Version 
+Premium Version (Can use by buying it to me through the telegram app they can buy it to my dm (@naxhtx) & my telegram server "https://t.me/+fqlJifFL7ls0NjZl")
